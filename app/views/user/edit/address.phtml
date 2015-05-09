@@ -1,0 +1,143 @@
+<div class="row myaccount">
+    <?php $this->partial("user/account/sidebar"); ?>
+	<?php 
+		$username = $this->session->get("username");
+		$user = new Users;
+		$user = $user::findFirstByUsername($username);
+		$address = new Address;
+		$id = $this->dispatcher->getParam("id");
+		if($id){
+			$address = Address::findFirst("address_id=$id");
+			$url = "/user/address/edit/$id";
+		}
+		else{
+			$url = "/user/address/new";
+		}
+	?>
+
+	<div id="edit" class="row edit col-sm-9 col-md-9 col-md-offset-0">
+		<h3 class="sub-header">Add New Address</h3>
+		<div class="col-md-9 panel-body">
+			<form id="address-form" data-toggle="validator" class="form form-horizontal" action="<?php echo $url; ?>" method="post">
+				<fieldset>
+					<h3 class="sub-header">Contact Information</h3>
+					<div class="form-group">
+						<div class="col-lg-5 col-xs-5 col-sm-4 col-md-3 ">
+							<div class="input-group">
+								<input type="text" required="" value="<?php echo $user->firstname; ?>" placeholder=Firstname" name="firstname" class="form-control">
+							</div>
+						</div>
+						<div class="col-lg-5 col-xs-5 col-sm-4 col-md-3 ">
+							<div class="input-group">
+								<input type="text" placeholder="Lastname" value="<?php echo $user->lastname; ?>" name="lastname" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10">
+							<div class="">
+								<input type="text" value="<?php echo $address->company; ?>" placeholder="Company" id="company" name="company" class="form-control"/>	
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10">
+							<div class="">
+								<input type="text" value="<?php echo $address->telephone; ?>" placeholder="Telephone" id="telephone" name="telephone" class="form-control" data-minlength="10"/>	
+							</div>
+						</div>
+					</div><br/>
+					<h3 class="sub-header">Address</h3>
+					<?php
+						$street = $address->street;
+						if($street){
+							$street = unserialize($street);
+						}
+					
+					?>
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10">
+							<div class="">
+								<input type="text" placeholder="Street Address1" id="street_address1" name="street[]" value="<?php echo $street[0]; ?>" class="form-control"/>	
+							</div>
+						</div>
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10 vert-offset-top-1">
+							<div class="">
+								<input type="text" placeholder="Street Address2" id="street_address2" value="<?php echo $street[1]; ?>" name="street[]" class="form-control" />	
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10">
+							<div class="">
+								<input type="text" value="<?php echo $address->city; ?>" placeholder="City" id="city" name="city" class="form-control" />	
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10">
+							<div class="">
+								<input type="text" value="<?php echo $address->state; ?>" placeholder="State" id="state" name="state" class="form-control" />	
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10">
+							<div class="">
+								<input type="text" value="<?php echo $address->zip; ?>" placeholder="Zip" id="zip" name="zip" class="form-control"/>	
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10">
+							<div class="">
+								 <select class="form-control" name="country" id="sel1">
+									<?php echo $this->helpers->getCountryOptions($address->country); ?>
+								 </select>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10">
+							<div class="checkbox">
+								<label><?php $default_billing = $address->default_billing; ?>
+								  <input value="1" name="default_billing" <?php if($default_billing) echo "checked=checked" ?> type="checkbox"> Default Billing Address
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10">
+							<div class="checkbox">
+								<label><?php $default_shipping 	 = $address->default_shipping; ?>
+								  <input value="1" <?php if($default_shipping) echo "checked=checked" ?> name="default_shipping" type="checkbox"> Default Shipping Address
+								</label>
+							</div>
+						</div>
+					</div>					
+						
+					<div class="form-group form-buttons">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10">
+							<div class="input-group">
+								<input type="submit" class="btn btn-primary btn-large" value="Save">
+							</div>
+							<div class="input-group col-lg-3 col-xs-3 col-sm-3 col-md-3 col-md-offset-1">
+								<input type="button"  onclick="javascript:location.href='/user/account'" class="btn btn-primary btn-large" value="Cancel">
+							</div>
+						</div>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        $('input[type="checkbox"]').click(function(){
+            if($(this).attr("value")=="checked"){
+                $(".change_password").toggle();
+            }
+        });
+		
+	});
+</script>

@@ -1,0 +1,61 @@
+Doing Things Pro-grammatically in Magento
+1. Related to Category
+	A. Creating Drop Down Attributes
+	B. Create Multi select Type Attributes
+	C. Create Yes no Type Attributes
+	D. Creating Category Group in Magento
+	E. Assigning attribute to Particular group
+	F. Create Category in Magento
+	G. Check Category Exist or not
+	H. Update Category Data in Magento
+	I. Create Category to the particular parent category
+
+2. Related to Product
+	A. Create Simple Product
+	B. Create Grouped Product
+	C. Create Configurable Product
+	D. Create Virtual Product
+	E. Create Bundle Product
+	F. Create Downloadable Product
+	G. Add Custom Option to Product
+	H. Update Product Data
+	I. Related to Attribute
+		1. Create simple Attribute
+		2. Create Attribute with specific drop down option
+		3. Create Attribute with multi select option
+		4. Update Category Attribute Data
+		5. Update options of particular drop down attributes
+		6. Assign attribute to particular attribute set
+		7. Create Attribute to particular store and particular option id
+	J. Related to Attribute set
+		1. Create Attribute set
+		2. Create Attribute group
+		3. Assign Attribute to particular group and its particular attribute set
+	K. Delete Product
+	L. Delete Product Attribute
+	M. Update Product Inventory
+	N. Update Product Price
+	O. Delete all product gallery images
+
+3. Related to Customer
+	A. Create Customer
+	B. Update Customer
+	C. Create Customer Address
+	D. Create Customer Billing Address
+	E. Create Customer Shipping Address
+	F. Update Customer Password
+	G. Update Customer Billing Address
+	H. update Customer Shipping Address
+	I. Create Customer Group
+	J. Delete Customer
+	I. Delete Customer Group
+	
+4. Related to Order
+	1. Create Order
+	2. Create Shipment
+	3. Create Invoice
+	
+5. Related to Page/Content
+	1. Create CMS Page in Magento
+	2. Create Static Block in magento
+	

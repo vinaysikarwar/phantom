@@ -1,0 +1,37 @@
+<div class="slider">
+	<section class="slider panel panel-body">
+		<div id="myCarousel" class="carousel slide">
+			<ol class="carousel-indicators">
+				<li class="active" data-slide-to="0" data-target="#myCarousel"></li>
+				<li data-slide-to="1" data-target="#myCarousel" class=""></li>
+				<li data-slide-to="2" data-target="#myCarousel" class=""></li>
+			</ol>
+			<ul class="carousel-inner no-padding">
+				<li class="item active">
+					<div class="slide-container clearfix">
+						<img height="400px" alt="Open Source Development" src="/banners/01_classic.jpg">				</div>
+				</li>
+				<li class="item">
+					<div class="slide-container clearfix">
+						<img height="400px" alt="Open Source Development" src="/banners/02_classic.jpg">				</div>
+				</li>
+				<li class="item">
+					<div class="slide-container clearfix">
+						<img height="400px" alt="Open Source Development" src="/banners/05_classic.jpg">				</div>
+				</li>
+			</ul>
+			<!-- Controls -->
+			<a data-slide="prev" href="#myCarousel" class="left carousel-control">
+				<span class="icon-prev"></span>
+			</a>
+			<a data-slide="next" href="#myCarousel" class="right carousel-control">
+				<span class="icon-next"></span>
+			</a>
+		</div>
+	</section>
+	<script type="text/javascript">
+		jQuery('.carousel').carousel({
+			interval: 5000 //changes the speed
+		});
+	</script>
+</div>

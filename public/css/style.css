@@ -1,0 +1,51 @@
+body{padding-top:0em !important;margin:0em !important;font-family:"Aileron Light";color:#3b3e4f;line-height:1.5em;font-size:1.5em;}
+.navbar.navbar-default{clear:both;margin:0 auto;}
+.myaccount .vertical-menu{margin:20px 0;}
+.myaccount #edit{margin-left:15px;}
+.form-buttons .input-group{float:left;}
+.float-right{float:right;}
+.welcome-text{line-height:50px;}
+.vert-offset-top-12{margin-top:12em;}
+.vert-offset-top-11{margin-top:11em;}
+.vert-offset-top-10{margin-top:10em;}
+.vert-offset-top-9{margin-top:9em;}
+.vert-offset-top-8{margin-top:8em;}
+.vert-offset-top-7{margin-top:7em;}
+.vert-offset-top-6{margin-top:6em;}
+.vert-offset-top-5{margin-top:5em;}
+.vert-offset-top-4{margin-top:4em;}
+.vert-offset-top-3{margin-top:3em;}
+.vert-offset-top-2{margin-top:2em;}
+.vert-offset-top-1{margin-top:1em;}
+.vert-offset-top-0{margin-top:0em;}
+.vert-offset-bottom-12{margin-bottom:12em;}
+.vert-offset-bottom-11{margin-bottom:11em;}
+.vert-offset-bottom-10{margin-bottom:10em;}
+.vert-offset-bottom-9{margin-bottom:9em;}
+.vert-offset-bottom-8{margin-bottom:8em;}
+.vert-offset-bottom-7{margin-bottom:7em;}
+.vert-offset-bottom-6{margin-bottom:6em;}
+.vert-offset-bottom-5{margin-bottom:5em;}
+.vert-offset-bottom-4{margin-bottom:4em;}
+.vert-offset-bottom-3{margin-bottom:3em;}
+.vert-offset-bottom-2{margin-bottom:2em;}
+.vert-offset-bottom-1{margin-bottom:1em;}
+.vert-offset-bottom-0{margin-bottom:0em;}
+.float-left{float:left;}
+.header .list-inline{float:right;}
+.user-address .address{margin-right:3em;}
+h3.title{text-transform:capitalize}
+.remove-padding{padding-left:0;padding-right:0;}
+#extensionlist_wrapper{margin-top:20px;padding-top:20px;border-top:1px solid rgb(220, 220, 220);}
+.text-content{background-color:#f5f5f5;border:1px solid #ccc;border-radius:4px;color:#333;display:block;font-size:13px;line-height:30px;margin:0 0 10px;padding:9.5px;word-break:break-all;word-wrap:break-word;}
+.title{font-weight:bold;text-transform:capitalize;}
+.remove-left-space{padding-left:0;margin-left:0;}
+.login.col-md-offset-3{margin-left:20% !important;}
+.login .col-md-offset-3{margin-left:23%;}
+#login{margin-top:22%;position:relative;}
+.admin-logo a img{float: left; position: relative; top: 10px; left: 20px;}
+.admin-header-text{ float: right; margin-top: 25px; text-align: right; width: auto;}
+.top-space{margin-top:15% !important;position:relative;}
+.register-box.top-space{margin-top:10% !important;}
+/*.msg{float: right; width: 80%; margin-top: 35px; margin-right: 15px;}*/
+.alert{font-family: "Source Sans Pro",sans-serif; font-size: 20px; color: rgb(59, 62, 79) ! important;}

@@ -1,0 +1,20 @@
+<h5>Additional Address Entries</h5>
+	<?php
+		$user_address = Address::getCustomerAddressess();
+		if(count($user_address) > 0){
+			foreach($user_address as $row){
+				?>
+					<div class="address col-sm-3 col-md-3 panel panel-default col-md-offset-0">
+						<p><?php echo $this->helpers->getUserAddress($row->street); ?></p>
+						<p><?php echo $row->city; ?>, <?php echo $row->state; ?></p>
+						<p><?php echo $row->zip; ?> - <?php echo $row->country; ?></p>
+						<p><?php echo $row->company; ?>,<?php echo $row->telephone; ?></p>
+						<p><a class="formlink" href="/user/address/edit/<?php echo $row->address_id; ?>">Edit</a></p>
+					</div>
+				<?php
+			}
+		}
+		else{
+			echo "Sorry! No Address Found.";
+		}
+	?>

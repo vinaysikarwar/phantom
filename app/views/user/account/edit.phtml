@@ -1,0 +1,131 @@
+<?php use Phalcon\Tag; ?>
+<div class="row myaccount">
+    <?php $this->partial("user/account/sidebar"); ?>
+	<?php 
+		$username = $this->session->get("username");
+		$user = new Users;
+		$user = $user::findFirstByUsername($username);
+	?>
+	<div id="edit" class="row edit col-sm-9 col-md-9 col-md-offset-0">
+		<h3 class="sub-header">Account Information</h3>
+		<div class="col-md-9 panel-body">
+			<form id="register-form" data-toggle="validator" class="form form-horizontal" action="/user/edit" method="post">
+				<fieldset>
+					<div class="form-group">
+						<div class="col-lg-5 col-xs-5 col-sm-4 col-md-3 ">
+							<div class="input-group">
+								<input type="text" required="" value="<?php echo $user->firstname; ?>" placeholder=Firstname" name="firstname" class="form-control">
+							</div>
+						</div>
+						<div class="col-lg-5 col-xs-5 col-sm-4 col-md-3 ">
+							<div class="input-group">
+								<input type="text" placeholder="Lastname" value="<?php echo $user->lastname; ?>" name="lastname" class="form-control">
+							</div>
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10 ">
+							<div class="input-group">
+								<span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+								<input type="email" required="" value="<?php echo $user->email; ?>" placeholder="Email" id="inputEmail" name="email" disabled class="form-control">
+								<div class="help-block with-errors"></div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10 ">
+							<div class="checkbox">
+								<label>
+								  <input value="checked" name="change_password" type="checkbox"> Change Password
+								</label>
+							</div>
+						</div>
+					</div>
+					<div class="change_password" style="display:none;">
+						<div class="form-group">
+							<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10 ">
+								<div class="input-group">
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-lock"></span>
+									</span>
+									<input type="password" placeholder="Old Password" id="old_password" name="old_password" class="form-control" data-minlength="6">	
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10 ">
+								<div class="input-group">
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-lock"></span>
+									</span>
+									<input type="password" placeholder="Password" id="rpassword" name="password" class="form-control" data-minlength="6">	
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group">
+							<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10 ">
+								<div class="input-group">
+									<span class="input-group-addon">
+										<span class="glyphicon glyphicon-lock"></span>
+									</span>
+									<input type="password" placeholder="Confirm Password" id="crPassword" name="cpassword" class="form-control" data-minlength="6">	
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group form-buttons">
+						<div class="col-lg-10 col-xs-10 col-sm-10 col-md-10 ">
+							<div class="input-group col-lg-3 col-xs-3 col-sm-3 col-md-3 ">
+								<input type="submit" class="btn btn-primary btn-large" value="Save">
+							</div>
+							<div class="input-group col-lg-3 col-xs-3 col-sm-3 col-md-3 ">
+								<input type="button"  onclick="javascript:location.href='/user/account'" class="btn btn-primary btn-large" value="Cancel">
+							</div>
+						</div>
+						
+						
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+    jQuery(document).ready(function($){
+        $('input[type="checkbox"]').click(function(){
+            if($(this).attr("value")=="checked"){
+                $(".change_password").toggle();
+            }
+        });
+		/* var focus = 0,
+		blur = 0;
+		$( "#old_password" )
+		  .focusout(function() {
+			$.ajax({
+				  url: "/user/validatepassword",
+				  method:'post',
+				   data: "password:abcedfr",
+				  context: document.body
+				}).done(function() {
+				  $( this ).addClass( "done" );
+				});
+				
+			focus++;
+			$( "#focus-count" ).text( "focusout fired: " + focus + "x" );
+		  })
+		  .blur(function() {
+			blur++;
+			$( "#blur-count" ).text( "blur fired: " + blur + "x" );
+		  });  */
+	});
+	jQuery('form').on('submit',function(){
+	   if(jQuery('#rpassword').val()!=jQuery('#crPassword').val()){
+		   alert('Password not matches');
+		   return false;
+	   }
+	   return true;
+	});
+</script>
