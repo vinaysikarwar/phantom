@@ -12,4 +12,5 @@ You can configure the settings in app/config/config.php
 If you have any issue please feel free to create an issue, I will ddefinetely help you.
 
 Thanks
-Vinay Sikarwar
+
+**Vinay Sikarwar**
