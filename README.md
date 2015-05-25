@@ -9,7 +9,7 @@ I have also integrated the Swift mail in this application which can be very usef
 
 You can configure the settings in app/config/config.php
 
-If you have any issue please feel free to create an issue, I will ddefinetely help you.
+If you have any issue please feel free to contact me.
 
 Thanks
 
